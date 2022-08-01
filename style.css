@@ -1,0 +1,139 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* variable colors*/
+:root{
+/* Primary */
+  --primary-red: hsl(0, 78%, 62%);
+  --primary-cyan: hsl(180, 62%, 55%);
+  --primary-orange: hsl(34, 97%, 64%);
+  --primary-blue: hsl(212, 86%, 64%);
+
+  /* Neutral*/
+  --neutral-db: hsl(234, 12%, 34%);
+  --neutral-gb: hsl(229, 6%, 66%);
+  --neutral-lg: hsl(0, 0%, 98%);
+}
+
+body{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  font-family:  'Poppins', sans-serif;
+  font-size: 15px;
+  line-height: 1.5em;
+  background-color: hsl(0, 0%, 98%);
+  padding: 20px;
+}
+
+
+.heading-item{
+  text-align: center;
+}
+
+.heading-item>*:first-child{
+  font-size: 25px;
+  font-weight: 200;
+  margin-bottom: 5px;
+}
+
+.small-faded{
+  white-space: pre-wrap;
+  margin-top: -50px;
+  color: hsl(234, 12%, 34%);
+  text-align: center;
+}
+
+.grid-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.col{
+  position: relative;
+  width: 350px;
+  height: 200px;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  line-height: 2em;
+}
+
+.col::after{
+  content: '';
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.supervisor::after{
+  background-color: hsl(180, 62%, 55%);
+}
+
+.Team-builder::after{
+  background-color: hsl(0,78%, 62%);
+}
+
+.karma::after{
+  background-color: hsl(34, 97%, 64%);
+}
+
+.calculator::after{
+  background-color: hsl(212, 86%, 64%);
+}
+
+
+.supervisor_img,
+.Team-builder_img,
+.karma_img,
+.calculator_img{
+  position: absolute;
+  right: 0;
+  padding: 20px;
+}
+
+.attribution{
+  font-size: 12px;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+@media (min-width: 768px){
+.supervisor{
+  grid-area: col1;
+}
+
+.Team-builder{
+  grid-area: col2;
+}
+
+.karma{
+  grid-area: col3;
+}
+
+.calculator{
+  grid-area: col4;
+}
+.grid-item{
+  display: grid;
+  grid-template-areas: ".     col2   ."
+                        "col1 col2 col4"
+                        "col1 col3 col4"
+                        ".    col3  .";
+  grid-gap: 20px;
+}
+}
